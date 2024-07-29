@@ -48,3 +48,16 @@ function rotate(array, n) {
 }
 
 // or
+
+function rotate(array,n){
+  array = array.slice(0);
+  for(let i = 0, tmp; i < Math.abs(n); i++) {
+    if (n > 0) {
+      array.unshift(array.pop());
+    } else {
+      array.push(array.shift());
+    }
+  }
+  
+  return array;
+}
